@@ -65,7 +65,7 @@ The goal of Mota AI is to "let AI play Mota and surpass human performance".
 │       └── *
 │           └── *.npy
 ├── pictures                      # GUI 會用到的各種圖片
-│   ├── demo                      # README.md 會用到的圖片
+│   └── demo                      # README.md 會用到的圖片
 │       └── *.png
 │   ├── *.png
 │   ├── *.jpg
@@ -134,6 +134,9 @@ python run_this.py
 ```
 ### 2. 產生通關路線 - 代理自我學習
 #### Demo
+https://user-images.githubusercontent.com/55278574/232440139-ef318948-113b-49bb-86cc-641793e3c059.mp4  
+
+使用學習演算法來產生一條通關路線。  
 選擇一張遊戲地圖，您可以在右下角的 Information 中查看您的電腦配置和環境建立資訊。  
 點擊 ![line_visible](pictures/line_visible.png) 可開啟/開閉事件節點之間的連線。  
 地圖下方顯示勇者（代理）當前的狀態資訊，點擊「顯示屬性」可以切換顯示當前樓層資訊。  
@@ -208,6 +211,8 @@ python run_this.py
 
 ### 3. 產生通關路線 - 手動輸入路線
 #### Demo
+https://user-images.githubusercontent.com/55278574/232440869-0e57125d-0c9d-48ba-b235-ed89a7889e9f.mp4
+
 可以用人工手動的方式輸入通關路線。  
 點擊「可行動列表」中的事件時，會自動填入行動索引值，並且地圖上會顯示紅色圈圈 ![cursor](pictures/cursor.png) 來標示您所選擇的事件。  
 確認後即可按下確認 ![ok](pictures/ok.png) 按鈕以執行事件。  
@@ -215,6 +220,8 @@ python run_this.py
 
 ### 4. 產生通關路線 - 以模型產生路線
 #### Demo
+https://user-images.githubusercontent.com/55278574/232440953-d3568473-c0f9-4c37-b0c4-da02c4311cb5.mp4
+
 將已經訓練好的模型用來預測其他魔塔，這也適用於未曾見過的魔塔。
 - 模型結合學習演算法  
   目前只提供 MCTSfD (Monte Carlo tree search from demonstration) 演算法，是將 MCTS 與模型預測做結合的演算法，能夠在模型產生的路線下，進一步的去探索新的狀態，以達到更好的成績。
@@ -223,16 +230,21 @@ python run_this.py
 
 ### 5. 訓練模型 - 使用通關路線訓練
 #### Demo
+https://user-images.githubusercontent.com/55278574/232441048-23ad8dd5-1347-4f82-9ac2-3c06eb068c5b.mp4
+
 可以使用多條已生成的通關路線來訓練出一個模型，這是達成泛化 (Generalization) 的必要方式。  
-在列表中按住 Shift 鍵可以一次選取多條通關路線。
+在列表中按住 Shift 鍵可以一次選取多條通關路線。  
+模型是使用「監視式學習」的方式訓練，可使用的演算法有：Random Forest 和 Gradient Boosting。
 - 特化  
-僅能使用同一張地圖的路線來訓練模型，並且已訓練好的模型建議用在同一張地圖的預測上。  
+僅能使用同一張地圖的路線來訓練模型。已訓練好的模型建議用在同一張地圖的預測上。  
 - 泛化  
 通關路線不限定於同一張地圖，你可以把所有至今為止的路線全部拿來訓練。  
 「特化」與「泛化」的差異在於訓練模型時所使用的特徵不同，這會影響模型的預測能力。
 
 ### 6. 演示路線 - 使用現有資料庫
 #### Demo
+https://user-images.githubusercontent.com/55278574/232441113-f611c13c-7198-4088-9041-3a346bec7b93.mp4
+
 可以回放已存在的通關路線動畫。  
 您可以通過滑動條來決定動畫撥放速度。  
 若想查看特定狀態的行動，可以通過單步 ![cursor](pictures/play.png) 和退回 ![cursor](pictures/back.png) 來移動到你想要的位置上。
@@ -241,7 +253,9 @@ python run_this.py
 - 將滑鼠移至 ![tooltip](pictures/tooltip.png) 圖示上，就會出現相關的工具提示。
 - 點擊表格欄位可排序。
 - 若 Animation Map 的視窗尺寸大於地圖尺寸，你可以用滑鼠移動它的位置。
-  - Demo
+  - Demo  
+  
+  https://user-images.githubusercontent.com/55278574/232441176-20eb813c-e575-43a9-96bc-e24f57da1662.mp4
 
 ## 本地化翻譯 Localized Translation
 - 默認語言使用「繁體中文」，文本放置於 `translation\Strings.py`，如果需要進行本地化翻譯，請聯繫作者Email: hung61601@gmail.com
